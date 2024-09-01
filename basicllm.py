@@ -2,7 +2,7 @@ import streamlit as st
 from langchain.llms import GooglePalm
 
 # Initialize the PaLM LLM with LangChain
-apikey = "AIzaSyCWGkTI119Jf4T8fnbWi9DRGrwD4jpEBn4"
+
 llm = GooglePalm(google_api_key=apikey, temperature=0.2)
 
 # Streamlit app
