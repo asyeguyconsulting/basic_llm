@@ -15,9 +15,13 @@ user_prompt = st.text_input("Enter your prompt:")
 # Button to generate text
 if st.button("Generate Response"):
     if user_prompt:
-        # Generate response using the LLM
-        response = llm(user_prompt)
-        st.write("**Response from Google PaLM:**")
-        st.write(response)
+        try:
+            # Generate response using the LLM
+            response = llm(user_prompt)
+            st.write("**Response from Google PaLM:**")
+            st.write(response)
+        except Exception as e:
+            st.error("An error occurred while generating the response.")
+            st.write(f"Error details: {e}")
     else:
-        st.write("Please enter a prompt.")
+        st.warning("Please enter a prompt.")
