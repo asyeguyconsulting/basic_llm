@@ -12,13 +12,14 @@ st.write("Enter a prompt to generate text using the Google PaLM API.")
 # User input
 user_prompt = st.text_input("Enter your prompt:")
 
-st.info(llm(user_prompt))
+
 # Button to generate text
 if st.button("Generate Response"):
     if user_prompt:
         try:
             # Generate response using the LLM
             response = llm(user_prompt)
+            st.info(response)
             st.write("**Response from Google PaLM:**")
             st.write(response)
         except TypeError as te:
