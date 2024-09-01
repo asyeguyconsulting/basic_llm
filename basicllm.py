@@ -7,17 +7,17 @@ llm = GooglePalm(google_api_key=apikey, temperature=0.2)
 
 # Streamlit app
 st.title("Google PaLM Text Generator")
-st.write("Enter a prompt to generate text using the Google PaLM API.")
+st.write("Generate text using a fixed prompt with the Google PaLM API.")
 
-# User input
-user_prompt = st.text_input("Enter your prompt:")
+# Fixed prompt
+fixed_prompt = "Tell me about the benefits of using AI in healthcare."
+
+# Display the fixed prompt
+st.write(f"**Prompt:** {fixed_prompt}")
 
 # Button to generate text
 if st.button("Generate Response"):
-    if user_prompt:
-        # Generate response using the LLM
-        response = llm(user_prompt)
-        st.write("**Response from Google PaLM:**")
-        st.write(response)
-    else:
-        st.write("Please enter a prompt.")
+    # Generate response using the LLM
+    response = llm(fixed_prompt)
+    st.write("**Response from Google PaLM:**")
+    st.write(response)
