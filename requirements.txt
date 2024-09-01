@@ -1,0 +1,7 @@
+google-auth google-auth-oauthlib
+langchain-huggingface
+huggingface_hub
+transformers
+accelerate
+bitsandbytes
+langchain-community
