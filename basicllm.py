@@ -20,8 +20,11 @@ if st.button("Generate Response"):
             response = llm(user_prompt)
             st.write("**Response from Google PaLM:**")
             st.write(response)
+        except TypeError as te:
+            st.error("A type error occurred. This is likely due to a keyword argument issue.")
+            st.write(f"Error details: {te}")
         except Exception as e:
-            st.error("An error occurred while generating the response.")
+            st.error("An unexpected error occurred.")
             st.write(f"Error details: {e}")
     else:
         st.warning("Please enter a prompt.")
