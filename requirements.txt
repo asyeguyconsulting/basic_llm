@@ -1,4 +1,5 @@
-google-auth 
+streamlit
+google-auth
 google-auth-oauthlib
 langchain-huggingface
 huggingface_hub
